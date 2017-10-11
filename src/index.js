@@ -21,6 +21,7 @@ class Winterfell extends React.Component {
         },
         questionAnswers: {},
         ref: 'form',
+        id: '',
         encType: 'application/x-www-form-urlencoded',
         method: 'POST',
         action: '',
