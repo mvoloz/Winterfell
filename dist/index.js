@@ -34,6 +34,7 @@ var Winterfell = (function (_React$Component) {
       },
       questionAnswers: {},
       ref: 'form',
+      id: '',
       encType: 'application/x-www-form-urlencoded',
       method: 'POST',
       action: '',
@@ -153,17 +154,21 @@ var Winterfell = (function (_React$Component) {
 
       return React.createElement(
         'form',
-        { method: this.props.method,
+        {
+          id: this.props.id,
+          method: this.props.method,
           encType: this.props.encType,
           action: this.state.action,
           ref: function (ref) {
             return _this2.formComponent = ref;
           },
-          className: this.state.schema.classes.form },
+          className: this.state.schema.classes.form
+        },
         React.createElement(
           'div',
           { className: this.state.schema.classes.questionPanels },
-          React.createElement(QuestionPanel, { schema: this.state.schema,
+          React.createElement(QuestionPanel, {
+            schema: this.state.schema,
             classes: this.state.schema.classes,
             panelId: currentPanel.panelId,
             panelIndex: currentPanel.panelIndex,
@@ -180,7 +185,8 @@ var Winterfell = (function (_React$Component) {
             onAnswerChange: this.handleAnswerChange.bind(this),
             onPanelBack: this.handleBackButtonClick.bind(this),
             onSwitchPanel: this.handleSwitchPanel.bind(this),
-            onSubmit: this.handleSubmit.bind(this) })
+            onSubmit: this.handleSubmit.bind(this)
+          })
         )
       );
     }
@@ -194,8 +200,6 @@ var Winterfell = (function (_React$Component) {
 
   return Winterfell;
 })(React.Component);
-
-;
 
 Winterfell.inputTypes = require('./inputTypes');
 Winterfell.errorMessages = require('./lib/errors');
